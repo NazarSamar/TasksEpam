@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace TasksEpam.Project1
+﻿namespace TasksEpam.Project1
 {
     class RectangleProperties
     {
@@ -24,7 +18,7 @@ namespace TasksEpam.Project1
         {
             if (left_top.X > right_bottom.X || left_top.Y < right_bottom.Y)
             {
-                throw new Exception();
+                throw new System.Exception();
             }
             else
             {
