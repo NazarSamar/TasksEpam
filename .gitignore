@@ -1,9 +1,9 @@
 .vs/
-/bin/Debug/TasksEpam.exe
-/TasksEpam.pdb
-/nunit_random_seed.tmp
-/obj/Debug/TasksEpam.exe
-/obj/Debug/TasksEpam.pdb
+TasksEpam.exe
+TasksEpam.pdb
+nunit_random_seed.tmp
+
+
 
 
 
