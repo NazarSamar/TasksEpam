@@ -25,5 +25,17 @@ namespace TasksEpam.Project1
             Task1 rectangle = new Task1(new Point(0, 4), new Point(5, 1));
             Assert.AreEqual(16, rectangle.Perimetr());
         }
+        [TestCase]
+        public void Task1_TestSquare_InputIs0_ReturnTrue()
+        {
+            Task1 rectangle = new Task1(new Point(), new Point());
+            Assert.AreEqual(0, rectangle.Square());
+        }
+        [TestCase]
+        public void Task1_TestSquare_ValidParams_ReturnTrue()
+        {
+            Task1 rectangle = new Task1(new Point(0, 4), new Point(5, 1));
+            Assert.AreEqual(15, rectangle.Square());
+        }
     }
 }
