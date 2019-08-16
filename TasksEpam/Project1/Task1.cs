@@ -44,7 +44,7 @@ namespace TasksEpam.Project1
             b = LT.Y - RB.Y;
         }
 
-        public double Perimetr() => 0;
+        public double Perimetr() => (a+b)*2;
         public double Square() => 0;
 
         public override string ToString() => $"{LT} {RB}";
