@@ -131,5 +131,42 @@ namespace TasksEpam.Project1
                 Assert.AreEqual(14, StaticClasses.Rectangle.Square(new Point(-2, 2), new Point(5, 0)));
             }
         }
+
+        [TestFixture]
+        class TestTask5
+        {
+            [TestCase]
+            public void TestMultiply_ValidParameter_ReturnTrue()
+            {
+                ComplexNumber c1 = new ComplexNumber(2, 2);
+                ComplexNumber c2 = new ComplexNumber(-2, 7);
+                ComplexNumber result = c1 * c2;
+                Assert.AreEqual(result.Imaginary, 10);
+                Assert.AreEqual(result.Real, -18);
+            }
+            [TestCase]
+            public void TestDivide_NotValidParameter_ReturnTrue()
+            {
+                ComplexNumber c1 = new ComplexNumber(2, 2);
+                ComplexNumber c2 = new ComplexNumber(0, 0);
+                try
+                {
+                    var a = c1 / c2;
+                }
+                catch(DivideByZeroException ae)
+                {
+                    Assert.AreEqual(new DivideByZeroException().Message, ae.Message);
+                }
+            }
+            [TestCase]
+            public void TestDivide_ValidParameter_ReturnTrue()
+            {
+                ComplexNumber c1 = new ComplexNumber(1, 1);
+                ComplexNumber c2 = new ComplexNumber(1, 1);
+                ComplexNumber result = c1 / c2;
+                Assert.AreEqual(result.Imaginary,0);
+                Assert.AreEqual(result.Real, 1);
+            }
+        }
     }
 }
