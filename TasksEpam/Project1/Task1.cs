@@ -22,7 +22,7 @@ namespace TasksEpam.Project1
 
         public override string ToString() => $"({X},{Y})";
     }
-    class Task1
+    class Rectangle
     {
         //LT = left top 
         //RB = right bottom
@@ -31,12 +31,12 @@ namespace TasksEpam.Project1
         readonly double a;
         readonly double b;
 
-        public Task1()
+        public Rectangle()
         {
             this.LT = new Point();
             this.RB = new Point();
         }
-        public Task1(Point left_top, Point right_bottom)
+        public Rectangle(Point left_top, Point right_bottom)
         {            
             if (left_top.X > right_bottom.X || left_top.Y < right_bottom.Y)
             {
