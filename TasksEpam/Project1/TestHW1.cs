@@ -73,6 +73,11 @@ namespace TasksEpam.Project1
                 RectangleProperties rectangle = new RectangleProperties(new Point(), new Point());
                 Assert.AreEqual(0, rectangle.Square);
             }
+            public void Task2_TestSquare_ValidParams_ReturnTrue()
+            {
+                RectangleProperties rectangle = new RectangleProperties(new Point(0,4), new Point(4,0));
+                Assert.AreEqual(16, rectangle.Square);
+            }
             [TestCase]
             public void Task2_TestConstructor_NotValidParams_EqualException()
             {
@@ -99,6 +104,31 @@ namespace TasksEpam.Project1
             {
                 Circle circle = new Circle(10);
                 Assert.AreEqual(Math.PI * 2 * 10, circle.Length(), 0.0001d);
+            }
+        }
+
+        [TestFixture]
+        class TestTask4
+        {
+            [TestCase]
+            public void TestPerimetr_NotValidParameter_ReturnTrue()
+            {
+                Assert.Throws<Exception>(() => StaticClasses.Rectangle.Perimetr(new Point(-2, 10), new Point(-10, 1)));
+            }
+            [TestCase]
+            public void TestPerimetr_ValidParameter_ReturnTrue()
+            {
+                Assert.AreEqual(18,StaticClasses.Rectangle.Perimetr(new Point(-2, 2), new Point(5, 0)));
+            }
+            [TestCase]
+            public void TestSquare_NotValidParameter_ReturnTrue()
+            {
+                Assert.Throws<Exception>(() => StaticClasses.Rectangle.Square(new Point(-2, 10), new Point(-10, 1)));
+            }
+            [TestCase]
+            public void TestSquare_ValidParameter_ReturnTrue()
+            {
+                Assert.AreEqual(14, StaticClasses.Rectangle.Square(new Point(-2, 2), new Point(5, 0)));
             }
         }
     }
