@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using TasksEpam.Project1;
+using TasksEpam.Project2;
 
 namespace TasksEpam
 {
@@ -10,7 +8,10 @@ namespace TasksEpam
     {
         static void Main(string[] args)
         {
-
+            Square square = new Square();
+            Project2.Rectangle rectangle = new Project2.Rectangle();
+            square.Draw();
+            rectangle.Draw();
             Console.ReadKey();
         }
     }
