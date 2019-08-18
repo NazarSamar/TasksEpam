@@ -1,7 +1,7 @@
 ﻿using System;
 namespace TasksEpam.Project2
 {
-    namespace Overriding
+    namespace Abstract
     {
         abstract class Figure : Project2.Figure
         {
@@ -20,7 +20,6 @@ namespace TasksEpam.Project2
             public Square(int x,int y):base(x,y)
             {
             }
-
             public override void Draw()
             {
                 Console.WriteLine(this.GetType().Name);
@@ -31,7 +30,6 @@ namespace TasksEpam.Project2
             public Rectangle(int x, int y) : base(x, y)
             {
             }
-
             public override void Draw()
             {
                 Console.WriteLine(this.GetType().Name);

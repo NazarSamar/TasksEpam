@@ -5,17 +5,25 @@ namespace TasksEpam.Project2
     {
         interface IDrawable
         {
-            void Draw();
-            void DrawAll(params IDrawable[] array);
+            void Draw();            
         }
+
+        static class Addition
+        {
+            public static void DrawAll(params IDrawable[] array)
+            {
+                foreach (var item in array)
+                {
+                    item.Draw();
+                }
+            }
+        }
+
         class Figure: IDrawable
         {
             readonly int X;
             readonly int Y;
 
-            public Figure()
-            {
-            }
             public Figure(int x, int y)
             {
                 this.X = x;
@@ -25,14 +33,9 @@ namespace TasksEpam.Project2
             {
                 Console.WriteLine(this.GetType().Name);
             }
-            public void DrawAll(params IDrawable[] array)
-            {
-                foreach (var item in array)
-                {
-                    item.Draw();
-                }
-            }
+            
         }
+
         class Square : Figure
         {
             public Square(int x, int y) : base(x, y)
@@ -43,12 +46,12 @@ namespace TasksEpam.Project2
                 Console.WriteLine(this.GetType().Name);
             }
         }
+
         class Rectangle : Figure, IDrawable
         {
             public Rectangle(int x, int y) : base(x, y)
             {
             }
-
             public new void Draw()
             {
                 Console.WriteLine(this.GetType().Name);

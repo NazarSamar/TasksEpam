@@ -13,7 +13,6 @@ namespace TasksEpam.Project2
                 this.X = x;
                 this.Y = y;
             }
-
             public virtual void Draw()
             {
                 Console.WriteLine(this.GetType().Name);
@@ -24,7 +23,6 @@ namespace TasksEpam.Project2
             public Square(int x, int y) : base(x, y)
             {
             }
-
             public override void Draw()
             {
                 Console.WriteLine(this.GetType().Name);
@@ -35,7 +33,6 @@ namespace TasksEpam.Project2
             public Rectangle(int x, int y) : base(x, y)
             {
             }
-
             public override void Draw()
             {
                 Console.WriteLine(this.GetType().Name);
