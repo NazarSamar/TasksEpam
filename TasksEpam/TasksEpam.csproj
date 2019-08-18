@@ -56,6 +56,11 @@
     <Compile Include="Project1\Task4.cs" />
     <Compile Include="Project1\Task5.cs" />
     <Compile Include="Project1\TestHW1.cs" />
+    <Compile Include="Project2\Task1.cs" />
+    <Compile Include="Project2\Task2.cs" />
+    <Compile Include="Project2\Task3.cs" />
+    <Compile Include="Project2\Task4.cs" />
+    <Compile Include="Project2\TestHW2.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -63,7 +68,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Project2\" />
     <Folder Include="Project3\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
