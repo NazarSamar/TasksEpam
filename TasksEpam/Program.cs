@@ -154,7 +154,64 @@ namespace TasksEpam
         }
         public static void ReadFileTASK2()
         {
+            string[] lines = File.ReadAllLines(@"fileTASK2.txt");
 
+            
+            Console.WriteLine("------TASK1------");
+            P2.Square square = new P2.Square();
+            P2.Rectangle rectangle = new P2.Rectangle();
+
+            Console.Write("class Square : ");
+            square.Draw();
+            Console.WriteLine();
+            Console.Write("class Rectangle : ");
+            rectangle.Draw();
+            Console.WriteLine();
+
+            Console.WriteLine("------TASK2------");
+            var line1 = lines[0].Split(',');
+            Console.WriteLine("Square");
+            P2.Abstract.Square square1 = new P2.Abstract.Square(Int32.Parse(line1[0]), Int32.Parse(line1[1]));
+            square1.Draw();
+            Console.WriteLine();
+
+            Console.WriteLine("Rectangle");
+            var line2 = lines[1].Split(',');
+            P2.Abstract.Rectangle rectangle1 = new P2.Abstract.Rectangle(Int32.Parse(line2[0]), Int32.Parse(line2[1]));
+            rectangle1.Draw();
+            Console.WriteLine();
+
+            Console.WriteLine("------TASK3------");
+
+            Console.WriteLine("Figure");
+            var line3 = lines[2].Split(',');
+            P2.Virtual.Figure figure2 = new P2.Virtual.Figure(Int32.Parse(line3[0]), Int32.Parse(line3[1]));
+            figure2.Draw();
+            Console.WriteLine();
+
+            Console.WriteLine("Square");
+            var line4 = lines[3].Split(',');
+            P2.Virtual.Square square2 = new P2.Virtual.Square(Int32.Parse(line4[0]), Int32.Parse(line4[1]));
+            square2.Draw();
+            Console.WriteLine();
+
+            Console.WriteLine("Rectangle");
+            var line5 = lines[4].Split(',');
+            P2.Virtual.Rectangle rectangle2 = new P2.Virtual.Rectangle(Int32.Parse(line5[0]), Int32.Parse(line5[1]));
+            rectangle2.Draw();
+            Console.WriteLine();
+
+            Console.WriteLine("------TASK4------");
+            Interface.IDrawable[] drawables = new Interface.IDrawable[]
+                {
+                    new Interface.Figure(Int32.Parse(lines[5].Split(',')[0]), Int32.Parse(lines[5].Split(',')[1])),
+                    new Interface.Square(Int32.Parse(lines[6].Split(',')[0]), Int32.Parse(lines[6].Split(',')[1])),
+                    new Interface.Square(Int32.Parse(lines[7].Split(',')[0]), Int32.Parse(lines[7].Split(',')[1])),
+                    new Interface.Figure(Int32.Parse(lines[8].Split(',')[0]), Int32.Parse(lines[8].Split(',')[1])),
+                    new Interface.Square(Int32.Parse(lines[9].Split(',')[0]), Int32.Parse(lines[9].Split(',')[1]))
+                };
+            P2.Interface.Addition.DrawAll(drawables);
+            Console.WriteLine();
         }
         public static void ConsoleTASK2()
         {
