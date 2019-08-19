@@ -79,16 +79,19 @@ namespace TasksEpam
 
             Console.WriteLine($"Multiplication = {complex1 * complex2}");
             Console.WriteLine($"Division = {complex1 * complex2}");
-
+            Console.ReadKey();
         }
         public static void ConsoleTASK1()
         {
             Console.WriteLine("------TASK1------");
             Console.WriteLine("Rectangle");
+            Console.WriteLine("Left Top coordinates");
             Console.Write("Enter x1: ");
             int x1 = Int32.Parse(Console.ReadLine());
-            Console.Write("Enter y1: ");
+            Console.Write("Enter y1: ");            
             int y1 = Int32.Parse(Console.ReadLine());
+
+            Console.WriteLine("Right Bottom coordinates");
             Console.Write("Enter x2: ");
             int x2 = Int32.Parse(Console.ReadLine());
             Console.Write("Enter y2: ");
@@ -102,10 +105,12 @@ namespace TasksEpam
 
             Console.WriteLine("------TASK2------");
             Console.WriteLine("RectangleProperties");
+            Console.WriteLine("Left Top coordinates");
             Console.Write("Enter x1: ");
             int x11 = Int32.Parse(Console.ReadLine());
             Console.Write("Enter y1: ");
             int y11 = Int32.Parse(Console.ReadLine());
+            Console.WriteLine("Right Bottom coordinates");
             Console.Write("Enter x2: ");
             int x21 = Int32.Parse(Console.ReadLine());
             Console.Write("Enter y2: ");
@@ -150,13 +155,12 @@ namespace TasksEpam
 
             Console.WriteLine($"Multiplication = {complex1 * complex2}");
             Console.WriteLine($"Division = {complex1 * complex2}");
-
+            Console.ReadKey();
         }
         public static void ReadFileTASK2()
         {
             string[] lines = File.ReadAllLines(@"fileTASK2.txt");
 
-            
             Console.WriteLine("------TASK1------");
             P2.Square square = new P2.Square();
             P2.Rectangle rectangle = new P2.Rectangle();
@@ -212,6 +216,7 @@ namespace TasksEpam
                 };
             P2.Interface.Addition.DrawAll(drawables);
             Console.WriteLine();
+            Console.ReadKey();
         }
         public static void ConsoleTASK2()
         {
@@ -228,18 +233,18 @@ namespace TasksEpam
 
             Console.WriteLine("------TASK2------");
             Console.WriteLine("Square");
-            Console.Write("Enter x:");
+            Console.Write("Enter x: ");
             int x1 = Int32.Parse(Console.ReadLine());
-            Console.Write("Enter y:");
+            Console.Write("Enter y: ");
             int y1 = Int32.Parse(Console.ReadLine());
             P2.Abstract.Square square1 = new P2.Abstract.Square(x1, y1);
             square1.Draw();
             Console.WriteLine();
 
             Console.WriteLine("Rectangle");
-            Console.Write("Enter x:");
+            Console.Write("Enter x: ");
             int x2 = Int32.Parse(Console.ReadLine());
-            Console.Write("Enter y:");
+            Console.Write("Enter y: ");
             int y2 = Int32.Parse(Console.ReadLine());
             P2.Abstract.Rectangle rectangle1 = new P2.Abstract.Rectangle(x2, y2);
             rectangle1.Draw();
@@ -248,27 +253,27 @@ namespace TasksEpam
             Console.WriteLine("------TASK3------");
 
             Console.WriteLine("Figure");
-            Console.Write("Enter x:");
+            Console.Write("Enter x: ");
             int x3 = Int32.Parse(Console.ReadLine());
-            Console.Write("Enter y:");
+            Console.Write("Enter y: ");
             int y3 = Int32.Parse(Console.ReadLine());
             P2.Virtual.Figure figure2 = new P2.Virtual.Figure(x3, y3);
             figure2.Draw();
             Console.WriteLine();
 
             Console.WriteLine("Square");
-            Console.Write("Enter x:");
+            Console.Write("Enter x: ");
             int x4 = Int32.Parse(Console.ReadLine());
-            Console.Write("Enter y:");
+            Console.Write("Enter y: ");
             int y4 = Int32.Parse(Console.ReadLine());
             P2.Virtual.Square square2 = new P2.Virtual.Square(x4, x4);
             square2.Draw();
             Console.WriteLine();
 
             Console.WriteLine("Rectangle");
-            Console.Write("Enter x:");
+            Console.Write("Enter x: ");
             int x5 = Int32.Parse(Console.ReadLine());
-            Console.Write("Enter y:");
+            Console.Write("Enter y: ");
             int y5 = Int32.Parse(Console.ReadLine());
             P2.Virtual.Rectangle rectangle2 = new P2.Virtual.Rectangle(x5, y5);
             rectangle2.Draw();
@@ -286,6 +291,7 @@ namespace TasksEpam
                 };
             P2.Interface.Addition.DrawAll(drawables);
             Console.WriteLine();
+            Console.ReadKey();
         }
             private static void Main(string[] args)
         {
@@ -293,10 +299,11 @@ namespace TasksEpam
             choose:
             while (true)
             {
+                Console.Clear();
                 Console.WriteLine("1: Taskl\n" +
                 "2: Task2\n" +
                 "3: Exit");
-                Console.Write("Enter number:");
+                Console.Write("Enter number: ");
                 int input1 = Int32.Parse(Console.ReadLine());
                 switch(input1)
                 {
@@ -317,7 +324,7 @@ namespace TasksEpam
                 Console.WriteLine("1: File\n" +
                 "2: Console\n" +
                 "3: Return back");
-                Console.Write("Enter number:");
+                Console.Write("Enter number: ");
                 int input2 = Int32.Parse(Console.ReadLine());
                 switch (input2)
                 {
@@ -334,16 +341,17 @@ namespace TasksEpam
                         Console.WriteLine();
                         break;
                     case 3:
+                        Console.Clear();
                         goto choose;
                     default:
                         break;
                 }
-           task2:
+            task2:
                 Console.Clear();
                 Console.WriteLine("1: File\n" +
                 "2: Console\n" +
                 "3: Return back");
-                Console.WriteLine("Enter number:");
+                Console.WriteLine("Enter number: ");
                 int input3 = Int32.Parse(Console.ReadLine());
                 switch (input3)
                 {
@@ -360,6 +368,7 @@ namespace TasksEpam
                         Console.WriteLine();
                         break;
                     case 3:
+                        Console.Clear();
                         goto choose;
                     default:
                         break;

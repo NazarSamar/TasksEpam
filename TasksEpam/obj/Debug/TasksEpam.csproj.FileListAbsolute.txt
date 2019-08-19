@@ -8,4 +8,3 @@ C:\Users\1\source\repos\TasksEpam\TasksEpam\obj\Debug\TasksEpam.csproj.CoreCompi
 C:\Users\1\source\repos\TasksEpam\TasksEpam\obj\Debug\TasksEpam.csproj.CopyComplete
 C:\Users\1\source\repos\TasksEpam\TasksEpam\obj\Debug\TasksEpam.exe
 C:\Users\1\source\repos\TasksEpam\TasksEpam\obj\Debug\TasksEpam.pdb
-C:\Users\1\source\repos\TasksEpam\TasksEpam\obj\Debug\TasksEpam.csprojAssemblyReference.cache
