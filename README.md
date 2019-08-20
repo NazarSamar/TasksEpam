@@ -1,1 +1,1 @@
-This repository contains all complicated tasks
+This repository contains all tasks
