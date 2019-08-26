@@ -9,14 +9,16 @@ namespace TasksEpam
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using Interface = TasksEpam.Project2.Interface;
-    using P1 = TasksEpam.Project1;
-    using P2 = TasksEpam.Project2;
+    using System.Threading;
+    using Interface = Project2.Interface;
+    using P1 = Project1;
+    using P2 = Project2;
+    using P3 = Project3;
 
     /// <summary>
     /// Class Program contains menu.
     /// </summary>
-    static class Program
+    public static class Program
     {
         /// <summary>
         /// Reading from file for TASK1.
@@ -311,14 +313,104 @@ namespace TasksEpam
             Console.WriteLine();
             Console.ReadKey();
         }
+
+        /// <summary>
+        /// Reading from console for TASK3.
+        /// </summary>
         public static void ConsoleTASK3()
         {
+            Console.WriteLine("------TASK1------");
+            List<P3.Person> people = new List<P3.Person>();
+            for (int i = 1; i < 11; i++)
+            {
+                List<string> numbers = new List<string>();
 
-        }
-        public static void ReadFileTASK3()
-        {
+                for (int j = 0; j < 3; j++)
+                {
+                    Thread.Sleep(1);
+                    numbers.Add(new Random().Next(100000000, 999999999).ToString());
+                }
 
+                Thread.Sleep(1);
+                people.Add(new P3.Person
+                {
+                    Name = "Person" + i.ToString(),
+                    Age = new Random().Next(18, 91),
+                    PhoneNumbers = new List<string>
+                    {
+                        numbers[0], numbers[1], numbers[2]
+                    }
+                });
+            }
+
+            foreach (var item in people)
+            {
+                Console.WriteLine($"{item.Name} {item.Age}");
+            }
+
+            Console.WriteLine("------TASK2------");
+            List<P3.Person> two_persons = new List<P3.Person>
+            {
+                new P3.Person
+                {
+                    Name = "Person12",
+                    Age = new Random().Next(18, 91),
+                    PhoneNumbers = new List<string>
+                    {
+                        new Random().Next(100000000, 999999999).ToString(), new Random().Next(100000000, 999999999).ToString()
+                    }
+                },
+                new P3.Person
+                {
+                    Name = "Person13",
+                    Age = new Random().Next(18, 91),
+                    PhoneNumbers = new List<string>
+                    {
+                        new Random().Next(100000000, 999999999).ToString(), new Random().Next(100000000, 999999999).ToString()
+                    }
+                }
+            };
+            people.AddRange(two_persons);
+            foreach (var person in people)
+            {
+                Console.WriteLine($"{person.Name} {person.Age}");
+                foreach (var phone in person.PhoneNumbers)
+                {
+                    Console.Write($"{phone} ");
+                }
+
+                Console.WriteLine();
+            }
+
+            Console.WriteLine("------TASK3------");
+            List<string> strings = new List<string>(new Random().Next(101, 200));
+            for (int i = 0; i < strings.Capacity; i++)
+            {
+                strings.Add(P3.Task3.Generate());
+            }
+
+            Console.WriteLine($"Size before transformation = {strings.Count}");
+            P3.Task3.Remove(ref strings);
+            Console.WriteLine($"Size after removing = {strings.Count}");
+            P3.Task3.Sort(ref strings);
+            Console.Write("Enter the page: ");
+            try
+            {
+                int page = int.Parse(Console.ReadLine());
+                Console.WriteLine($"Page {page}:");
+                P3.Task3.DisplayPage(page);
+            }
+            catch (Exception exc)
+            {
+                Console.WriteLine($"{exc.Message}");
+            }
+
+            Console.ReadKey();
         }
+
+        /// <summary>
+        /// Main menu
+        /// </summary>
         public static void Choose()
         {
             while (true)
@@ -351,6 +443,7 @@ namespace TasksEpam
                         break;
                 }
             }
+
             void Task1()
             {
                 Console.Clear();
@@ -383,6 +476,7 @@ namespace TasksEpam
                         break;
                 }
             }
+
             void Task2()
             {
                 Console.Clear();
@@ -415,46 +509,38 @@ namespace TasksEpam
                         break;
                 }
             }
-        }
-        public static void Task3()
-        {
-            Console.Clear();
-            Console.WriteLine("1: File\n" +
-            "2: Console\n" +
-            "3: Return back");
-            Console.Write("Enter number: ");
-            int input2 = int.Parse(Console.ReadLine());
-            switch (input2)
+
+            void Task3()
             {
-                case 1:
-                    Console.Clear();
-                    Console.WriteLine("File");
-                    ReadFileTASK1();
-                    Console.WriteLine();
-                    Choose();
-                    break;
-                case 2:
-                    Console.Clear();
-                    Console.WriteLine("Console");
-                    ConsoleTASK1();
-                    Console.WriteLine();
-                    Choose();
-                    break;
-                case 3:
-                    Console.Clear();
-                    Choose();
-                    break;
-                default:
-                    break;
+                Console.Clear();
+                Console.WriteLine(
+                "1: Console\n" +
+                "2: Return back");
+                Console.Write("Enter number: ");
+                int input4 = int.Parse(Console.ReadLine());
+                switch (input4)
+                {
+                    case 1:
+                        Console.Clear();
+                        Console.WriteLine("Console");
+                        ConsoleTASK3();
+                        Console.WriteLine();
+                        Choose();
+                        break;
+                    case 2:
+                        Console.Clear();
+                        Choose();
+                        break;                    
+                    default:
+                        break;
+                }
             }
         }
-
+        
         /// <auto-generated />
         private static void Main(string[] args)
-        {
-            Console.CursorVisible = false;
+        {            
             Choose();
         }
     }
 }
-
