@@ -63,6 +63,7 @@
     <Compile Include="Project2\TestHW2.cs" />
     <Compile Include="Project3\Person.cs" />
     <Compile Include="Project3\Task3.cs" />
+    <Compile Include="Project3\TestHW3.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
