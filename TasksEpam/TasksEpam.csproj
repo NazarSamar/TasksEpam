@@ -61,16 +61,17 @@
     <Compile Include="Project2\Task3.cs" />
     <Compile Include="Project2\Task4.cs" />
     <Compile Include="Project2\TestHW2.cs" />
+    <Compile Include="Project3\Person.cs" />
+    <Compile Include="Project3\Task3.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Project3\" />
-  </ItemGroup>
-  <ItemGroup>
+    <Content Include="bin\Debug\FileTask1.txt" />
     <Content Include="bin\Debug\fileTASK2.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
