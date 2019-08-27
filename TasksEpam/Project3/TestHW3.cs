@@ -54,6 +54,7 @@ namespace TasksEpam.Project3
             }
 
             var to_check_list = strings.OrderByDescending(x => x).ToList();
+            Project3.Task3.Sort(ref strings);
             Assert.AreEqual(to_check_list[0], strings[0]);
         }
     }
